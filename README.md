@@ -28,8 +28,6 @@ To add words to the JSON file, you can either directly edit the file or use the 
 
 ### Some screenshots to show off
 
-![img](readme_imgs/hangman03.png)
-
 ![img](readme_imgs/hangman04.png)
 
 ![img](readme_imgs/hangman05.png)
