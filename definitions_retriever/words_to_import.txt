@@ -1,0 +1,8 @@
+bookcase
+book
+light
+traffic
+traffic jam
+chair
+elephant
+hippopotamus
