@@ -62,14 +62,14 @@ for i in words_list:
 if special == "special":
     while True:
         choice = input(
-            'Are you sure you wish to import words from "definitions_retriever/downloaded_definitions.json"? (y/n)'
+            'Are you sure you wish to import words from "definitions_retriever/downloaded_definitions.json"? (y/n) '
         ).casefold()
         if choice == "y":
             break
         elif choice == "n":
             exit()
         continue
-    print(words_keys)
+    # print(words_keys)
     with open(imported_words_file, encoding="utf8") as file:
         words_to_import = json.load(file)
 

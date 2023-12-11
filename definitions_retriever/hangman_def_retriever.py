@@ -14,12 +14,12 @@ with open(words_file, encoding="utf8") as file:
 
 def menu():
     while True:
-        print("What would you like to do?")
-        print('1. Import "words_to_import.txt" to download words from it')
-        print("2. Manually add words to download")
-        print("3. Peace in the World")
-        print("4. Quit the program")
-        choice = input("Your choice: ")
+        print("\tWHAT WOULD YOU LIKE TO DO?\n")
+        print('\t1. Import "words_to_import.txt" to download words from it')
+        print("\t2. Manually add words to download")
+        print("\t3. Peace in the World")
+        print("\t4. Quit the program")
+        choice = input("\nYour choice: ")
         if choice in ["1", "2", "3", "4"]:
             return choice
         print("\n\tWRONG INPUT, TRY AGAIN.\n")
@@ -89,7 +89,9 @@ def download_words(site_url, words_to_download):
                 new_def = new_def.replace(new_def[-1], ".")
             else:
                 new_def += "."
+            new_def = f"{new_def} (dictionary.cambridge.org)"
             print(new_def)
+            word_to_dl = word_to_dl.upper()
             add_word_to_file(current_definitons, word_to_dl, new_def)
             print(f'"{word_to_dl}" was successfully added.')
             # print("Waiting 5 seconds before next download")

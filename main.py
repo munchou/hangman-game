@@ -8,6 +8,11 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def loadWords(language):
+    with open("words.json", encoding="utf8") as file:
+        return json.load(file)[language]
+
+
 def title():
     print("\n\t██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗")
     print("\t██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║")
@@ -20,10 +25,12 @@ def title():
 
 def language_select():
     while True:
+        english_words = loadWords("english")
+        french_words = loadWords("francais")
         title()
         available_choice = ["1", "2"]
-        print("\n\t1. ENGLISH")
-        print("\t2. FRANCAIS")
+        print(f"\n\t1. ENGLISH ({len(english_words)} words available)")
+        print(f"\t2. FRANCAIS ({len(french_words)} mots disponibles)")
         choice = input("\t-----> ")
 
         if choice not in available_choice:
@@ -40,11 +47,6 @@ def language_select():
 
 
 language, lang_view = language_select()
-
-
-def loadWords(language):
-    with open("words.json", encoding="utf8") as file:
-        return json.load(file)[language]
 
 
 def littleguy(health_start, health):
